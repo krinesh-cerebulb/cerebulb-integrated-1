@@ -1,21 +1,128 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin 'tailwindcss-animate';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
   }
 }
+/*
+  ---break---
+*/
+:root {
+  --background: hsl(183 34% 99%);
+  --foreground: hsl(183 68% 2%);
+  --muted: hsl(183 28% 92%);
+  --muted-foreground: hsl(183 5% 27%);
+  --popover: hsl(183 34% 98%);
+  --popover-foreground: hsl(183 68% 1%);
+  --card: hsl(183 34% 98%);
+  --card-foreground: hsl(183 68% 1%);
+  --border: hsl(183 15% 90%);
+  --input: hsl(183 15% 90%);
+  --primary: hsl(183 83% 64%);
+  --primary-foreground: hsl(183 83% 4%);
+  --secondary: hsl(183 13% 89%);
+  --secondary-foreground: hsl(183 13% 29%);
+  --accent: hsl(183 13% 89%);
+  --accent-foreground: hsl(183 13% 29%);
+  --destructive: hsl(21 93% 45%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --ring: hsl(183 83% 64%);
+  --chart-1: hsl(183 83% 64%);
+  --chart-2: hsl(183 13% 89%);
+  --chart-3: hsl(183 13% 89%);
+  --chart-4: hsl(183 13% 92%);
+  --chart-5: hsl(183 86% 64%);
+  --radius: 0.5rem;
+}
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.dark {
+  --background: hsl(183 55% 2%);
+  --foreground: hsl(183 11% 99%);
+  --muted: hsl(183 28% 8%);
+  --muted-foreground: hsl(183 5% 73%);
+  --popover: hsl(183 55% 3%);
+  --popover-foreground: hsl(0 0% 100%);
+  --card: hsl(183 55% 3%);
+  --card-foreground: hsl(0 0% 100%);
+  --border: hsl(183 15% 13%);
+  --input: hsl(183 15% 13%);
+  --primary: hsl(183 83% 64%);
+  --primary-foreground: hsl(183 83% 4%);
+  --secondary: hsl(183 12% 13%);
+  --secondary-foreground: hsl(183 12% 73%);
+  --accent: hsl(183 12% 13%);
+  --accent-foreground: hsl(183 12% 73%);
+  --destructive: hsl(21 93% 51%);
+  --destructive-foreground: hsl(0 0% 0%);
+  --ring: hsl(183 83% 64%);
+  --chart-1: hsl(183 83% 64%);
+  --chart-2: hsl(183 12% 13%);
+  --chart-3: hsl(183 12% 13%);
+  --chart-4: hsl(183 12% 16%);
+  --chart-5: hsl(183 86% 64%);
+}
+/*
+  ---break---
+*/
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+/*
+  ---break---
+*/
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
