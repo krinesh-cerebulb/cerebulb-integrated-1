@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-scroll-area": "^1.2.5",
+    "@radix-ui/react-separator": "^1.1.4",
     "@radix-ui/react-slot": "^1.1.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -16,6 +18,7 @@
     "next": "15.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
     "tailwind-merge": "^3.0.1",
     "tailwindcss-animate": "^1.0.7"
   },
@@ -30,5 +33,226 @@
     "postcss": "^8",
     "tailwindcss": "^4.0.0",
     "typescript": "^5"
+  },
+  "company": "Humac Inc",
+  "sections": {
+    "IT_Services": {
+      "title": "IT Services",
+      "sub_headings": [
+        {
+          "title": "Custom Software Development",
+          "description": "High-value custom software development solutions for businesses ranging from Fortune 500 to small startups."
+        },
+        {
+          "title": "Software Prototyping",
+          "description": "Rapid development of software prototypes to validate concepts and requirements."
+        },
+        {
+          "title": "DevOps Automation",
+          "description": "Services include DevOps Consulting, Infrastructure Automation, Configuration Management, Integration & Deployment, Infrastructure Monitoring, and Platform-As-A-Service (PaaS).",
+          "benefits": [
+            "Improving productivity of software development teams",
+            "Maintaining consistency in software deliveries",
+            "Resolving problems efficiently",
+            "Enhancing IT systems and streamlining processes",
+            "Reducing complexities in system management"
+          ]
+        },
+        {
+          "title": "Mobile Application Development",
+          "description": "Turning concepts into safe and feature-rich mobile applications through international mobile app development expertise."
+        },
+        {
+          "title": "Cloud Computing",
+          "description": "Comprehensive cloud computing solutions to optimize digital infrastructure and scalability."
+        },
+        {
+          "title": "Quality Assurance",
+          "description": "Maintaining the highest level of product quality while enhancing performance and scalability through various software testing approaches.",
+          "testing_services": [
+            "API Interface testing services",
+            "Localization testing services",
+            "Useability testing services",
+            "Mobile app testing services",
+            "Automation testing services",
+            "Security testing services",
+            "Performance testing services",
+            "Regression testing services",
+            "Functional testing services",
+            "E-commerce Testing services"
+          ]
+        },
+        {
+          "title": "Systems Integration",
+          "description": "Software integration services aimed at generating new business values and strengthening IT infrastructure."
+        },
+        {
+          "title": "Web Application Development",
+          "description": "Development of robust and scalable web applications for businesses."
+        }
+      ],
+      "cta": "Enquire Now"
+    },
+    "IT_Staffing": {
+      "title": "IT Staffing Service",
+      "description": "We offer a wide range of customized high-quality research-based talent consulting services.",
+      "sub_headings": [
+        {
+          "title": "Permanent Staffing",
+          "description": "Long-term talent acquisition solutions for businesses seeking full-time employees."
+        },
+        {
+          "title": "Temporary Staffing",
+          "description": "Flexible staffing solutions for project-based or short-term work requirements."
+        },
+        {
+          "title": "Recruitment Process Outsourcing (RPO)",
+          "description": "Comprehensive outsourcing of recruitment processes to streamline hiring."
+        }
+      ],
+      "cta": "View More"
+    },
+    "Technologies": {
+      "title": "Technologies",
+      "tech_expertise": [
+        {
+          "title": "Java",
+          "description": "Expertise in Java development and related technologies."
+        },
+        {
+          "title": ".Net",
+          "description": "Comprehensive .NET framework development services."
+        },
+        {
+          "title": "CRM",
+          "description": "Customer Relationship Management system implementation and support."
+        },
+        {
+          "title": "API Testing",
+          "description": "Specialized services for testing and validating APIs."
+        },
+        {
+          "title": "DevOps",
+          "description": "DevOps practices and methodologies implementation."
+        },
+        {
+          "title": "Cloud Technologies",
+          "description": "Expertise in various cloud platforms and technologies."
+        },
+        {
+          "title": "Project Management",
+          "description": "Professional project management services and methodologies."
+        },
+        {
+          "title": "BigData Technologies",
+          "description": "Solutions for managing and analyzing large data sets."
+        },
+        {
+          "title": "AI & Machine Learning",
+          "description": "Implementation of artificial intelligence and machine learning solutions."
+        }
+      ]
+    },
+    "Careers": {
+      "title": "Careers",
+      "headline": "Find The Right Career You Deserve",
+      "cta": "View Benefits",
+      "job_search": {
+        "filters": ["Job Type", "Job Location"],
+        "job_types": ["C2C", "Contract To Hire", "Full Time", "W2"],
+        "job_locations": ["AZ", "CA", "Columbus", "Columbus OH", "Dimondale", "Lansing", "MI", "Milpitas", "Milwaukee", "NEW JERSEY", "New Jersey (Hybrid)", "NJ", "NY", "NYC", "OH", "PHOENIX", "Portland Oregon", "Princeton", "TEXAS", "WI"]
+      },
+      "featured_jobs": [
+        "Senior Slack Infrastructure Engineer (W2, AZ PHOENIX)",
+        "IB Field Data Engineer (C2C, Milwaukee WI)",
+        "IB-Regulatory Engineer (C2C, Milwaukee WI)",
+        "IT Analyst (Full Time, AZ PHOENIX)",
+        "IT Engineer (Full Time, AZ PHOENIX)",
+        "AWS EKS & Datadog (W2, AZ PHOENIX)",
+        "SAP Developer (W2, CA Milpitas)",
+        "PowerBuilder Developer (C2C, Lansing MI)",
+        ".Net Cloud Architect (C2C, Lansing MI)",
+        "Big data with Oracle Fusion cloud (W2, PHOENIX)"
+      ],
+      "cta_button": "Load more..."
+    },
+    "Join_Our_Team": {
+      "title": "Join Our Team",
+      "description": "Join Our Team today and let us help you grow your career!",
+      "company_overview": {
+        "founding": "Founded in 2006, Humac supplies a broad range of IT services including e-Business solutions, Enterprise Resource Planning (ERP) implementation and Post Implementation Support, Application development, Application Maintenance, Software customizations and Remote Database Administration services.",
+        "years": "18+ years of Excellence",
+        "workforce": "51-200 employees",
+        "headquarters": "Phoenix, AZ",
+        "locations": {
+          "USA": "2730 W Agua Fria Fwy, Suite #204, Phoenix, Arizona 85027",
+          "INDIA": "#1308, B-Block, Asian Sun City Commercial Complex, Beside Sarath City Capital Mall, Kothaguda, Hyderabad 500084"
+        }
+      },
+      "specialties": [
+        "IT Consulting Services",
+        "Software Development",
+        "Software Training",
+        "Visa Sponsorship",
+        "IT Infrastructure Development and Maintenance"
+      ],
+      "cta": "Apply Now"
+    },
+    "Additional_Sections": {
+      "About_Humac": {
+        "title": "About Humac",
+        "description": "Humac is an IT Software Services Company which provides high value information technology services and solutions to companies ranging in size from the Fortune 500 to small startups.",
+        "vision_values": "Great results come from great work. Quality search work demands research, planning, a process, judgment and finesse. Beginning with the gathering of detailed and accurate requirements, through the orchestration of the client's interview process, we pay attention to every detail. There are no shortcuts. Believe in your client. If we cannot be confident in a company's executive team, corporate culture, business model or future, we will not represent that company. Candidates entrust us with their careers. They deserve our sincere belief that any career moves we propose are sound and align with their stated priorities. When a company becomes our client, we immerse ourselves as its advocate. We become the client."
+      },
+      "Industries_Served": {
+        "title": "Industries We Serve",
+        "industries": [
+          "Accounting & Finance",
+          "Industrial & Manufacturing",
+          "Office, Clerical & Administrative",
+          "Human Resources",
+          "Transportation",
+          "Engineering & Technology",
+          "Medical & Science",
+          "Warehousing"
+        ]
+      },
+      "Clients": {
+        "title": "Our Clients",
+        "client_list": [
+          "Arizona",
+          "Unisys",
+          "NTT-Data",
+          "Capgemini",
+          "Deloitte",
+          "Haxaware",
+          "Genpact",
+          "Tek-systems",
+          "Infosys",
+          "Matson",
+          "American Express",
+          "CVS Health"
+        ],
+        "testimonial": {
+          "quote": "Humac Inc has been our valued partner and consistently delivers with excellence.",
+          "author": "Jay Kode",
+          "position": "VP-Operations"
+        }
+      },
+      "Contact_Information": {
+        "quick_links": ["About Us", "IT Services", "Technologies", "Contact Us"],
+        "locations": {
+          "USA": {
+            "address": "2730 W Agua Fria Fwy, Suite #204, Phoenix, Arizona 85027",
+            "phone": "(623) 582-2253"
+          },
+          "INDIA": {
+            "address": "#1308, B-Block, Asian Sun City Commercial Complex, Beside Sarath City Capital Mall, Kothaguda, Hyderabad 500084",
+            "phone": "+91 8977032116"
+          }
+        },
+        "social_media": ["LinkedIn"]
+      }
+    }
   }
 }
