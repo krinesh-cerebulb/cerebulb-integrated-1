@@ -19,13 +19,13 @@ const contentVariants = cva("text-content", {
 })
 
 export interface ContentProps
-  extends React.HTMLAttributes<HTMLParagraphElement>,
+  extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof contentVariants> {}
 
-const Content = React.forwardRef<HTMLParagraphElement, ContentProps>(
+const Content = React.forwardRef<HTMLDivElement, ContentProps>(
   ({ className, variant, ...props }, ref) => {
     return (
-      <p
+      <div
         ref={ref}
         className={cn(contentVariants({ variant }), className)}
         {...props}

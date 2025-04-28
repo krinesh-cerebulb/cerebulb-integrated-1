@@ -16,7 +16,7 @@ const navConfig = [
       { href: "/custom-software-development", label: "Custom Software Development" },
       { href: "/software-prototyping", label: "Software Prototyping" },
       { href: "/devops-automation", label: "DevOps Automation" },
-      { href: "/mobile-application-development", label: "Mobile Application Development" },
+      { href: "/mobile-app-development", label: "Mobile Application Development" },
       { href: "/cloud-computing", label: "Cloud Computing" },
       { href: "/quality-assurance", label: "Quality Assurance" },
       { href: "/systems-integration", label: "Systems Integration" },
@@ -36,15 +36,15 @@ const navConfig = [
     href: "/technologies",
     label: "Technologies",
     dropdown: [
-      { href: "/java", label: "Java" },
-      { href: "/dotnet", label: ".Net" },
-      { href: "/crm", label: "CRM" },
-      { href: "/api-testing", label: "API Testing" },
-      { href: "/devops", label: "DevOps" },
-      { href: "/cloud-technologies", label: "Cloud Technologies" },
-      { href: "/project-management", label: "Project Management" },
-      { href: "/bigdata-technologies", label: "BigData Technologies" },
-      { href: "/ai-machine-learning", label: "AI & Machine Learning" }
+      { href: "/technologies/Java", label: "Java" },
+      { href: "/technologies/Dotnet", label: ".Net" },
+      { href: "/technologies/CRM", label: "CRM" },
+      { href: "/technologies/api-testing", label: "API Testing" },
+      { href: "/technologies/devops", label: "DevOps" },
+      { href: "/technologies/cloud-technologies", label: "Cloud Technologies" },
+      { href: "/technologies/project-management", label: "Project Management" },
+      { href: "/technologies/bigdata-technologies", label: "BigData Technologies" },
+      { href: "/technologies/machine-learning", label: "Machine Learning" }
     ]
   },
   {

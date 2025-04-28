@@ -90,7 +90,7 @@ export function SiteHeader() {
                 <Link href="/custom-software-development" className="text-gray-600 hover:text-blue-600 transition-colors">Custom Software Development</Link>
                 <Link href="/software-prototyping" className="text-gray-600 hover:text-blue-600 transition-colors">Software Prototyping</Link>
                 <Link href="/devops-automation" className="text-gray-600 hover:text-blue-600 transition-colors">DevOps Automation</Link>
-                <Link href="/mobile-application-development" className="text-gray-600 hover:text-blue-600 transition-colors">Mobile Application Development</Link>
+                <Link href="/mobile-app-development" className="text-gray-600 hover:text-blue-600 transition-colors">Mobile Application Development</Link>
                 <Link href="/cloud-computing" className="text-gray-600 hover:text-blue-600 transition-colors">Cloud Computing</Link>
                 <Link href="/quality-assurance" className="text-gray-600 hover:text-blue-600 transition-colors">Quality Assurance</Link>
                 <Link href="/systems-integration" className="text-gray-600 hover:text-blue-600 transition-colors">Systems Integration</Link>

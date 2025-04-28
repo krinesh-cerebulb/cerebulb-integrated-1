@@ -21,7 +21,7 @@ const services = [
   },
   { 
     name: 'Mobile Application Development',
-    slug: 'mobile-application-development',
+    slug: 'mobile-app-development',
     description: 'Create powerful mobile applications for iOS and Android.'
   },
   { 

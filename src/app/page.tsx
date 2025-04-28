@@ -1,11 +1,125 @@
 "use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import Image from "next/image";
+import Link from "next/link";
+import { useState, useEffect, ChangeEvent } from "react";
+import ServiceImage from '@/components/ServiceImage'
+import HeroImage from '@/components/HeroImage'
+
+// Cloud Computing Services data
+interface CloudService {
+  id: number;
+  title: string;
+  description: string;
+}
+
+const cloudServices: CloudService[] = [
+  {
+    id: 1,
+    title: "Infrastructure-as-a-Service (IaaS)",
+    description: "Scalable cloud infrastructure services for your business needs."
+  },
+  {
+    id: 2,
+    title: "Platform-as-a-Service (PaaS)",
+    description: "Complete development and deployment environment in the cloud."
+  },
+  {
+    id: 3,
+    title: "Software-as-a-Service (SaaS)",
+    description: "Cloud-based software solutions delivered on demand."
+  }
+];
+
+// Mobile App Development Services data
+interface MobileAppService {
+  id: number;
+  title: string;
+  description: string;
+}
+
+const mobileAppServices: MobileAppService[] = [
+  {
+    id: 1,
+    title: "Custom Mobile App Development",
+    description: "Build tailored mobile applications that perfectly match your business needs and requirements."
+  },
+  {
+    id: 2,
+    title: "App Technology Consulting",
+    description: "Expert guidance on choosing the right technology stack and architecture for your mobile app."
+  },
+  {
+    id: 3,
+    title: "Wearable Apps Development",
+    description: "Create innovative applications for smartwatches and other wearable devices."
+  },
+  {
+    id: 4,
+    title: "Native App Development",
+    description: "Develop high-performance native applications for iOS and Android platforms."
+  },
+  {
+    id: 5,
+    title: "Hybrid App Development",
+    description: "Build cross-platform applications that work seamlessly across multiple devices."
+  }
+];
+
+// IT Staffing Services data
+interface StaffingService {
+  id: number;
+  title: string;
+  image: string;
+  description: string;
+}
+
+const staffingServices: StaffingService[] = [
+  {
+    id: 1,
+    title: "Permanent Staffing",
+    image: "/images/Permanent.png",
+    description: "Find the perfect long-term fit for your organization with our permanent staffing solutions."
+  },
+  {
+    id: 2,
+    title: "Temporary Staffing",
+    image: "/images/Temporarystaff.png",
+    description: "Flexible staffing solutions for your short-term and project-based needs."
+  },
+  {
+    id: 3,
+    title: "Recruitment Process Out Sourcing (RPO)",
+    image: "/images/recruimentprocess.png",
+    description: "Streamline your recruitment process with our comprehensive RPO services."
+  }
+];
+
+// Slide data
+interface Slide {
+  image: string;
+  heading: string;
+  subheading: string;
+}
+
+const slides: Slide[] = [
+  {
+    image: "/images/Home_1.webp",
+    heading: "You Are In Good Hands",
+    subheading: "Find The Right Career You Deserve",
+  }
+];
 
 // Job data based on the screenshot
-const jobListings = [
+interface Job {
+  id: number;
+  title: string;
+  jobType: string;
+  location: string;
+  slug: string;
+}
+
+const jobListings: Job[] = [
   {
     id: 1,
     title: "Senior Slack Infrastructure Engineer",
@@ -80,13 +194,23 @@ export default function Home() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
   
-  const slides = [
-    {
-      heading: "You Are In Good Hands",
-      subheading: "Find The Right Career You Deserve",
-      image: "/images/Home_1.webp"
-    }
-  ];
+  const handleJobTypeChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    setJobType(e.target.value);
+    setCurrentPage(1);
+  };
+
+  const handleLocationChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    setJobLocation(e.target.value);
+    setCurrentPage(1);
+  };
+
+  const loadMoreJobs = () => {
+    setCurrentPage(prev => prev + 1);
+  };
+
+  const handleDotClick = (index: number) => {
+    setCurrentSlide(index);
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -118,97 +242,33 @@ export default function Home() {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     
-    setDisplayedJobs(filteredJobs.slice(0, endIndex));
+    setDisplayedJobs(filteredJobs.slice(startIndex, endIndex));
   }, [searchTerm, jobType, jobLocation, currentPage]);
 
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value);
-    setCurrentPage(1);
-  };
-  
-  const handleJobTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setJobType(e.target.value);
-    setCurrentPage(1);
-  };
-  
-  const handleLocationChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setJobLocation(e.target.value);
-    setCurrentPage(1);
-  };
-  
-  const loadMoreJobs = () => {
-    setCurrentPage(prev => prev + 1);
-  };
-
-  const handleDotClick = (index: number) => {
-    setCurrentSlide(index);
-  };
-
   return (
-    <main>
+    <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-[#0b1b48] text-white">
-        <div className="relative h-[600px] md:h-[650px]">
-          {/* Image Overlay */}
-          <div className="absolute inset-0 z-0">
-            {slides.map((slide, index) => (
-              <div 
-                key={index}
-                className={`absolute inset-0 transition-opacity duration-1000 ${
-                  currentSlide === index ? 'opacity-100' : 'opacity-0'
-                }`}
-              >
-                <Image
-                  src={slide.image}
-                  alt="Hero background"
-                  fill
-                  priority
-                  className="object-cover opacity-40"
-                  sizes="100vw"
-                />
-              </div>
-            ))}
-          </div>
-          
-          {/* Content */}
-          <div className="max-w-7xl mx-auto relative z-10 h-full flex">
-            <div className="flex flex-col justify-center h-full px-4 md:px-8 w-full">
-              <div className="bg-[#3472fc]/20 py-2 px-4 rounded-md inline-block mb-4 max-w-fit">
-                <h1 className="text-2xl md:text-3xl font-bold text-white">
-                  {slides[currentSlide].heading}
-                </h1>
-              </div>
-              
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
-                {slides[currentSlide].subheading}
-              </h2>
-              
-              <div className="flex flex-wrap gap-4 mt-8">
-                <Link 
-                  href="/find-a-job" 
-                  className="px-6 py-3 bg-white text-[#0b1b48] hover:bg-[#f8f9fa] rounded-md font-medium transition-colors shadow-lg hover:shadow-xl"
+      <section className="relative h-[500px] bg-[#0b1b48] text-white">
+        {/* Background Image */}
+        <HeroImage src={slides[currentSlide].image} alt="Hero Background" />
+
+        {/* Content */}
+        <div className="max-w-7xl mx-auto relative z-10 h-full flex">
+          <div className="flex flex-col justify-center h-full px-4 md:px-8 w-full">
+            <div className="max-w-3xl">
+              {slides.map((slide, index) => (
+                <div
+                  key={index}
+                  className={`transition-opacity duration-1000 ${currentSlide === index ? 'opacity-100' : 'opacity-0'}`}
                 >
-                  Find Job
-                </Link>
-                <Link 
-                  href="/hire-a-talent" 
-                  className="px-6 py-3 bg-[#3472fc] hover:bg-[#2665fc] text-white rounded-md font-medium transition-colors shadow-lg hover:shadow-xl"
-                >
-                  Find Talent
-                </Link>
-                <Link 
-                  href="/about-us" 
-                  className="px-6 py-3 border border-white hover:bg-white hover:text-[#0b1b48] rounded-md font-medium transition-colors shadow-lg hover:shadow-xl"
-                >
-                  About
-                </Link>
-                <Link 
-                  href="/join-our-team" 
-                  className="px-6 py-3 bg-[#3472fc] hover:bg-[#2665fc] text-white rounded-md font-medium transition-colors shadow-lg hover:shadow-xl"
-                >
-                  Join Our Team
-                </Link>
-              </div>
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+                    {slide.heading}
+                  </h1>
+                  <p className="text-xl md:text-2xl mb-8">
+                    {slide.subheading}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
           
@@ -234,108 +294,203 @@ export default function Home() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <div className="flex items-center">
-                
+                {/* Add your announcement content here */}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Jobs Section */}
-      <section className="py-12 max-w-7xl mx-auto px-4">
-        <div className="flex justify-between items-center mb-8">
-          <h2 className="text-3xl font-bold text-gray-800">Jobs</h2>
-          <Link href="/find-a-job" className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors">
-            View All
-          </Link>
-        </div>
-        
-        {/* Job Search & Filters */}
-        <div className="mb-8 flex flex-col md:flex-row gap-4">
-          <div className="relative flex-grow">
-            <input 
-              type="text" 
-              placeholder="Search" 
-              className="border border-gray-300 rounded-md py-2 px-4 w-full"
-              value={searchTerm}
-              onChange={handleSearch}
-            />
-            <button className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-              </svg>
-            </button>
+      {/* Search and filter section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+            <div className="relative w-full md:w-auto">
+              <input
+                type="text"
+                placeholder="Search jobs..."
+                className="border border-gray-300 rounded-md py-2 px-4 w-full"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+            </div>
+            <div className="flex gap-4">
+              <select 
+                className="border border-gray-300 rounded-md py-2 px-4"
+                value={jobType}
+                onChange={handleJobTypeChange}
+              >
+                <option>All Job Type</option>
+                <option>W2</option>
+                <option>C2C</option>
+                <option>Full Time</option>
+              </select>
+              <select 
+                className="border border-gray-300 rounded-md py-2 px-4"
+                value={jobLocation}
+                onChange={handleLocationChange}
+              >
+                <option>All Job Location</option>
+                <option>AZ, PHOENIX</option>
+                <option>Milwaukee, WI</option>
+                <option>CA, Milpitas</option>
+                <option>Lansing, MI</option>
+              </select>
+            </div>
           </div>
-          <div className="flex gap-4">
-            <select 
-              className="border border-gray-300 rounded-md py-2 px-4"
-              value={jobType}
-              onChange={handleJobTypeChange}
-            >
-              <option>All Job Type</option>
-              <option>W2</option>
-              <option>C2C</option>
-              <option>Full Time</option>
-            </select>
-            <select 
-              className="border border-gray-300 rounded-md py-2 px-4"
-              value={jobLocation}
-              onChange={handleLocationChange}
-            >
-              <option>All Job Location</option>
-              <option>AZ, PHOENIX</option>
-              <option>Milwaukee, WI</option>
-              <option>CA, Milpitas</option>
-              <option>Lansing, MI</option>
-            </select>
-          </div>
-        </div>
-        
-        {/* Job listings */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {displayedJobs.map((job) => (
-            <div key={job.id} className="border border-gray-200 rounded-lg shadow-sm p-6 bg-white hover:shadow-md transition-shadow">
-              <h3 className="text-xl font-bold mb-4">{job.title}</h3>
-              <div className="flex flex-col gap-2 mb-6">
-                <div className="flex items-center text-gray-600">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="mr-2" viewBox="0 0 16 16">
-                    <path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4zM3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.389.389 0 0 0-.029-.518z"/>
-                    <path fillRule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10zm8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3z"/>
-                  </svg>
-                  <span>{job.jobType}</span>
+          
+          {/* Job listings */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {displayedJobs.map((job) => (
+              <div key={job.id} className="border border-gray-200 rounded-lg shadow-sm p-6 bg-white hover:shadow-md transition-shadow">
+                <h3 className="text-xl font-bold mb-4">{job.title}</h3>
+                <div className="flex flex-col gap-2 mb-6">
+                  <div className="flex items-center text-gray-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="mr-2" viewBox="0 0 16 16">
+                      <path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4zM3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.389.389 0 0 0-.029-.518z"/>
+                      <path fillRule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10zm8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3z"/>
+                    </svg>
+                    <span>{job.jobType}</span>
+                  </div>
+                  <div className="flex items-center text-gray-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="mr-2" viewBox="0 0 16 16">
+                      <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                    </svg>
+                    <span>{job.location}</span>
+                  </div>
                 </div>
-                <div className="flex items-center text-gray-600">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="mr-2" viewBox="0 0 16 16">
-                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-                  </svg>
-                  <span>{job.location}</span>
+                <Link 
+                  href={`/jobs/${job.slug}`} 
+                  className="px-6 py-2 bg-blue-600 text-white rounded-md inline-block text-center hover:bg-blue-700 transition-colors"
+                >
+                  More Details →
+                </Link>
+              </div>
+            ))}
+          </div>
+          
+          {/* Load More Button */}
+          {displayedJobs.length < jobListings.length && (
+            <div className="mt-8 text-center">
+              <button 
+                onClick={loadMoreJobs}
+                className="px-6 py-2 bg-blue-600 text-white rounded-md inline-block hover:bg-blue-700 transition-colors"
+              >
+                Load More Jobs
+              </button>
+            </div>
+          )}
+          
+          {/* Job Count */}
+          <div className="mt-6 text-center text-gray-600">
+            Showing {displayedJobs.length} of {jobListings.length} job opportunities
+          </div>
+        </div>
+      </section>
+
+      {/* Cloud Computing Section */}
+      <section className="py-16 bg-[#0B1340] text-white">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="md:w-1/2">
+              <h2 className="text-4xl font-bold mb-4">Cloud Computing</h2>
+              <p className="text-gray-300 mb-8">
+                With lots of unique blocks, you can easily build pages them without build your
+                next landing page so quickly with us.
+              </p>
+              <button className="bg-blue-600 text-white px-8 py-3 rounded-md hover:bg-blue-700 transition-colors">
+                Enquire Now
+              </button>
+            </div>
+            <div className="md:w-1/2">
+              <Image
+                src="/images/cloud2.png"
+                alt="Cloud Computing"
+                width={600}
+                height={400}
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Cloud Computing Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="md:w-1/2">
+              <Image
+                src="/images/cloud.png"
+                alt="About Cloud Computing"
+                width={500}
+                height={500}
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="md:w-1/2">
+              <h2 className="text-3xl font-bold mb-6">About Cloud Computing</h2>
+              
+              <p className="text-gray-600 mb-8">
+                Choosing a cloud type or cloud service is a unique decision. Cloud Services are
+                infrastructure, platforms, or software that are hosted by third-party providers and
+                made available to users through the Internet. There are three main types:
+              </p>
+              <div className="space-y-4">
+                {cloudServices.map((service) => (
+                  <div key={service.id} className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-blue-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <div>
+                      <h3 className="font-semibold text-gray-900">{service.title}</h3>
+                      <p className="text-gray-600">{service.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mobile App Development Services Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-4">Our Mobile App Development Services</h2>
+          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+            As a top website development business, we ensure our programmers know the most recent trends and industry standards.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {mobileAppServices.map((service) => (
+              <div key={service.id} className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <h3 className="text-xl font-semibold mb-3 text-blue-600">{service.title}</h3>
+                <p className="text-gray-600">{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* IT Staffing Services Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-4">IT Staffing Service</h2>
+          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+            We offer a wide range of customized high-quality research-based talent consulting services.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {staffingServices.map((service) => (
+              <div key={service.id} className="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
+                <ServiceImage src={service.image} alt={service.title} />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+                  <p className="text-gray-600 mb-4">{service.description}</p>
                 </div>
               </div>
-              <Link 
-                href={`/jobs/${job.slug}`} 
-                className="px-6 py-2 bg-blue-600 text-white rounded-md inline-block text-center hover:bg-blue-700 transition-colors"
-              >
-                More Details →
-              </Link>
-            </div>
-          ))}
-        </div>
-        
-        {/* Load More Button */}
-        {displayedJobs.length < jobListings.length && (
-          <div className="mt-8 text-center">
-            <button 
-              onClick={loadMoreJobs}
-              className="px-6 py-2 bg-blue-600 text-white rounded-md inline-block hover:bg-blue-700 transition-colors"
-            >
-              Load More Jobs
-            </button>
+            ))}
           </div>
-        )}
-        
-        {/* Job Count */}
-        <div className="mt-6 text-center text-gray-600">
-          Showing {displayedJobs.length} of {jobListings.length} job opportunities
         </div>
       </section>
     </main>

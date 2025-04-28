@@ -8,19 +8,19 @@ const technologies = [
     slug: 'java',
     title: 'Java',
     description: 'Enterprise-grade applications with Spring Framework, Java EE, and more.',
-    image: '/tech/java.png'
+    image: '/tech/Java.png'
   },
   {
     slug: 'dotnet',
     title: '.NET',
     description: 'Full-stack development with ASP.NET Core, Blazor, and the Microsoft ecosystem.',
-    image: '/tech/dotnet.png'
+    image: '/tech/Dotnet.png'
   },
   {
     slug: 'crm',
     title: 'CRM',
     description: 'Customer relationship management solutions with Salesforce, Dynamics 365, and more.',
-    image: '/tech/crm.png'
+    image: '/tech/CRM.png'
   },
   {
     slug: 'api-testing',
@@ -53,8 +53,8 @@ const technologies = [
     image: '/tech/bigdata.png'
   },
   {
-    slug: 'ai-machine-learning',
-    title: 'AI & Machine Learning',
+    slug: 'machine-learning',
+    title: 'Machine Learning',
     description: 'Predictive analytics, NLP, computer vision, and intelligent applications.',
     image: '/tech/ai-ml.png'
   }
@@ -73,7 +73,6 @@ export default function Technologies() {
             Our technical expertise spans across various domains and platforms.
           </p>
         </div>
-        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {technologies.map((tech) => (
             <Link 
@@ -88,10 +87,7 @@ export default function Technologies() {
                   width={120}
                   height={120}
                   className="object-contain group-hover:scale-105 transition-transform"
-                  onError={(e) => {
-                    // Fallback if image doesn't exist
-                    e.currentTarget.src = '/tech/default.png';
-                  }}
+                  // Removed onError handler, as Next.js Image does not support it
                 />
               </div>
               <div className="p-6">

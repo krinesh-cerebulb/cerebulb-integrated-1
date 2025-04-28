@@ -17,83 +17,7 @@ interface Slide {
 }
 
 const slides: Slide[] = [
-	{
-		heading: "You are in good hands",
-		subheading: "",
-		cta: {
-			findJob: "/find-a-job",
-			findTalent: "/hire-a-talent",
-			about: "/about-us",
-			joinTeam: "/join-our-team"
-		},
-		image: "/images/hm4-banner-1.jpg"
-	},
-	{
-		heading: "Find The Right Career You Deserve",
-		subheading: "Your dream job is waiting",
-		cta: {
-			findJob: "/find-a-job",
-			findTalent: "/hire-a-talent",
-			about: "/about-us",
-			joinTeam: "/join-our-team"
-		},
-		image: "/images/home_banner.jpg"
-	},
-	{
-		heading: "Find The Best Talent That Suits",
-		subheading: "your requirements",
-		cta: {
-			findJob: "/find-a-job",
-			findTalent: "/hire-a-talent",
-			about: "/about-us",
-			joinTeam: "/join-our-team"
-		},
-		image: "/images/home_banner.jpg"
-	},
-	{
-		heading: "We are Information Technology Services Provider",
-		subheading: "",
-		cta: {
-			findJob: "/find-a-job",
-			findTalent: "/hire-a-talent",
-			about: "/about-us",
-			joinTeam: "/join-our-team"
-		},
-		image: "/images/home_banner.jpg"
-	},
-	{
-		heading: "Join Our Team today and let us help you grow your career!",
-		subheading: "",
-		cta: {
-			findJob: "/find-a-job",
-			findTalent: "/hire-a-talent",
-			about: "/about-us",
-			joinTeam: "/join-our-team"
-		},
-		image: "/images/home_banner.jpg"
-	},
-	{
-		heading: "We are excited to celebrate Humac Inc.'s 17th anniversary with a special cake-cutting ceremony and gift distribution for our employees. We couldn't have achieved this milestone without the dedication and hard work of our amazing team.",
-		subheading: "As a token of our appreciation, we will be distributing special gifts to our employees to express our gratitude for their contribution to our success.",
-		cta: {
-			findJob: "/find-a-job",
-			findTalent: "/hire-a-talent",
-			about: "/about-us",
-			joinTeam: "/join-our-team"
-		},
-		image: "/images/home_banner.jpg"
-	},
-	{
-		heading: "We hope that this small gesture will bring a smile to everyone's faces and remind them how much they mean to us.",
-		subheading: "We are proud of our achievements over the past 17 years and are looking forward to many more years of excellence. Thank you for being a part of our journey!",
-		cta: {
-			findJob: "/find-a-job",
-			findTalent: "/hire-a-talent",
-			about: "/about-us",
-			joinTeam: "/join-our-team"
-		},
-		image: "/images/home_banner.jpg"
-	}
+	
 ];
 
 export function MainHero() {
@@ -134,7 +58,6 @@ export function MainHero() {
 									sizes="100vw"
 								/>
 							)}
-							{/* Dark overlay for better text readability */}
 							<div className="absolute inset-0 bg-black/50"></div>
 						</div>
 					))}
