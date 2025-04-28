@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import { Heading } from '@/components/ui/heading';
+// import { Heading } from '@/components/ui/heading';
 
 const jobData = [
   {

@@ -27,7 +27,7 @@ export default function ContactUs() {
             </div>
             <div>
               <h3 className="font-semibold text-lg mb-1">CereBulb (India)</h3>
-              <p>307 & 801, Hiranandani Signature,<br />Block #13B, Road #1C,<br />GIFZ-SEZ Zone 1, Gift City,<br />Gandhinagar-382355, Gujarat<br />
+              <p>307 &amp; 801, Hiranandani Signature,<br />Block #13B, Road #1C,<br />GIFZ-SEZ Zone 1, Gift City,<br />Gandhinagar-382355, Gujarat<br />
               <span className="font-semibold">P :</span> (+91) 99099 77295</p>
             </div>
           </div>
@@ -43,13 +43,13 @@ export default function ContactUs() {
             {/* reCAPTCHA placeholder */}
             <div className="flex items-center gap-2">
               <input type="checkbox" id="recaptcha" className="w-5 h-5" />
-              <label htmlFor="recaptcha" className="text-sm">I'm not a robot</label>
+              <label htmlFor="recaptcha" className="text-sm">I&apos;m not a robot</label>
               <div className="ml-auto"><Image src="/images/19.png" alt="reCAPTCHA" width={120} height={32} /></div>
             </div>
             <button type="submit" className="w-full bg-[#2563eb] text-white py-3 rounded font-semibold text-lg hover:bg-blue-700 transition-colors">Submit Now</button>
           </form>
           <p className="text-xs text-gray-500 mt-4 text-center">
-            By providing a telephone number and submitting the form you are consenting to be contracted by SMS text message. Message & data rates may apply. Reply STOP to opt out of further messaging.
+            By providing a telephone number and submitting the form you are consenting to be contracted by SMS text message. Message &amp; data rates may apply. Reply STOP to opt out of further messaging.
           </p>
         </div>
       </div>

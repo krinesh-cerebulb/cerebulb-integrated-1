@@ -89,11 +89,11 @@ export default function JoinOurTeam() {
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row">
           <div className="md:w-1/2 text-white mb-10 md:mb-0 md:pr-10">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Join Our Team Today</h1>
-            <h2 className="text-2xl md:text-3xl font-semibold mb-6">let us Help You To Grow Your Career !</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold mb-6">Let us Help You To Grow Your Career !</h2>
             
             <p className="mb-6">
               We are looking for passionate, driven, and innovative individuals to join our
-              team. Whether you're just starting your career or looking for a new challenge,
+              team. Whether you&apos;re just starting your career or looking for a new challenge,
               we have opportunities that can help you take your skills to the next level.
             </p>
           </div>

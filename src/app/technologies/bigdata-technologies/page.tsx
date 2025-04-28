@@ -79,7 +79,7 @@ export default function BigDataTechnologies() {
                 Always be the Top in this Tech Driven Generation
               </Heading>
               <p className="text-gray-700 mb-4">
-                Big data technologies continue to evolve rapidly, driven by the need to handle larger datasets, process data in real-time, and derive actionable insights. These technologies empower organizations to unlock the value of their data, optimize operations, and gain a competitive advantage in today's data-driven world.
+                Big data technologies continue to evolve rapidly, driven by the need to handle larger datasets, process data in real-time, and derive actionable insights. These technologies empower organizations to unlock the value of their data, optimize operations, and gain a competitive advantage in today&apos;s data-driven world.
               </p>
               <ul className="list-disc ml-6 text-blue-900 space-y-2 font-semibold">
                 <li>Apache Spark</li>

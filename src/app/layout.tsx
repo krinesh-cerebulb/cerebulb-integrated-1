@@ -3,7 +3,7 @@ import Footer from '@/components/ui/Footer';
 import type { Metadata } from "next";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { MainHero } from "@/components/ui/main-hero";
+// import { MainHero } from "@/components/ui/main-hero";
 import { fontMono, fontSans } from "@/lib/fonts";
 
 export const metadata: Metadata = {

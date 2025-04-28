@@ -5,28 +5,28 @@ import Link from 'next/link';
 import { Heading } from '@/components/ui/heading';
 
 export default function MobileAppDevelopment() {
-  const services = [
-    {
-      title: 'Custom Mobile App Development',
-      description: 'Build tailored mobile applications that perfectly match your business requirements.'
-    },
-    {
-      title: 'App Technology Consulting',
-      description: 'Expert guidance on choosing the right technology stack for your mobile application.'
-    },
-    {
-      title: 'Wearable Apps Development',
-      description: 'Create innovative applications for smartwatches and other wearable devices.'
-    },
-    {
-      title: 'Native App Development',
-      description: 'Develop high-performance native applications for iOS and Android platforms.'
-    },
-    {
-      title: 'Hybrid App Development',
-      description: 'Build cross-platform applications that work seamlessly across multiple devices.'
-    }
-  ];
+  // const services = [
+  //   {
+  //     title: 'Custom Mobile App Development',
+  //     description: 'Build tailored mobile applications that perfectly match your business requirements.'
+  //   },
+  //   {
+  //     title: 'App Technology Consulting',
+  //     description: 'Expert guidance on choosing the right technology stack for your mobile application.'
+  //   },
+  //   {
+  //     title: 'Wearable Apps Development',
+  //     description: 'Create innovative applications for smartwatches and other wearable devices.'
+  //   },
+  //   {
+  //     title: 'Native App Development',
+  //     description: 'Develop high-performance native applications for iOS and Android platforms.'
+  //   },
+  //   {
+  //     title: 'Hybrid App Development',
+  //     description: 'Build cross-platform applications that work seamlessly across multiple devices.'
+  //   }
+  // ];
 
   const technologies = [
     {

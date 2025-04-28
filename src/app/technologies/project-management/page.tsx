@@ -82,7 +82,7 @@ export default function ProjectManagementDevelopment() {
                 <p className="font-semibold text-blue-900 mb-1">Expertise And Experience:</p>
                 <p className="text-gray-700 mb-4">Our team consists of experienced project management professionals with diverse industry expertise. We bring a wealth of knowledge and best practices to every project we undertake.</p>
                 <p className="font-semibold text-blue-900 mb-1">Tailored Solutions:</p>
-                <p className="text-gray-700">We understand that each project is unique. We tailor our project management services to suit your specific requirements, ensuring that our approach is aligned with your organization's objectives and culture.</p>
+                <p className="text-gray-700">We understand that each project is unique. We tailor our project management services to suit your specific requirements, ensuring that our approach is aligned with your organization&apos;s objectives and culture.</p>
               </div>
             </div>
             <div className="md:w-1/2 order-1 md:order-2">

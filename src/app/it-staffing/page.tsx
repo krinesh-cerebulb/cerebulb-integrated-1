@@ -36,7 +36,7 @@ export default function ITStaffing() {
             <Content className="prose max-w-none">
               <p className="text-lg text-gray-600">
                 We offer comprehensive IT staffing solutions to help you build high-performing teams.
-                Our services are designed to meet your specific needs, whether you're looking for permanent
+                Our services are designed to meet your specific needs, whether you&apos;re looking for permanent
                 employees, temporary staff, or complete recruitment process outsourcing.
               </p>
             </Content>

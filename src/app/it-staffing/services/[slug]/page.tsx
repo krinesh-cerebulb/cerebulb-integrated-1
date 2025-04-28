@@ -14,7 +14,7 @@ const staffingDetails = {
       <p>
         Permanent staffing provides organizations with full-time employees who become integral 
         members of your team. We help you find and hire top talent for long-term positions, 
-        ensuring a perfect match between candidates' skills and your company culture.
+        ensuring a perfect match between candidates&apos; skills and your company culture.
       </p>
       
       <h3>Our Permanent Staffing Process</h3>
@@ -113,7 +113,7 @@ export default function StaffingService() {
             Service Not Found
           </Heading>
           <p className="text-gray-600">
-            The staffing service you're looking for doesn't exist or has been moved.
+            The staffing service you&apos;re looking for doesn&apos;t exist or has been moved.
           </p>
         </div>
       </main>

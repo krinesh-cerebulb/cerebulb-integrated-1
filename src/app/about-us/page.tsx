@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Heading } from '@/components/ui/heading';
-import { Content } from '@/components/ui/content';
+// import { Content } from '@/components/ui/content';
 import LogoImage from '@/components/LogoImage';
 
 export default function AboutUs() {

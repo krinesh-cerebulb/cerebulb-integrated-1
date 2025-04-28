@@ -11,8 +11,8 @@ const highlights = [
   'Extensive Domain Expertise',
   'Up-to-date Database',
   'Smooth Recruit Process',
-  "You're Not Just Another Client To Us",
-  "We're Perpetually Transforming To Meet Market Needs"
+  "You&apos;re Not Just Another Client To Us",
+  "We&apos;re Perpetually Transforming To Meet Market Needs"
 ];
 
 const benefits = [
@@ -127,7 +127,7 @@ export default function StaffingService() {
             Service Not Found
           </Heading>
           <p className="text-gray-600">
-            The staffing service you're looking for doesn't exist or has been moved.
+            The staffing service you&apos;re looking for doesn&apos;t exist or has been moved.
           </p>
         </div>
       </main>
