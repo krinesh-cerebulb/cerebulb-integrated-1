@@ -5,46 +5,46 @@ import Link from "next/link";
 import { Heading } from "@/components/ui/heading";
 import ServiceIcon, { ServiceIconName } from "@/components/ui/ServiceIcon";
 
-export default function CustomSoftwareDevelopment() {
-  const services = [
-    {
-      title: "Software Consulting Services",
-      description:
-        "Expert guidance on software strategy, architecture, and technology selection.",
-      icon: "consulting",
-    },
-    {
-      title: "Software Integration Services",
-      description:
-        "Seamless integration of different software systems and applications.",
-      icon: "integration",
-    },
-    {
-      title: "Custom CRM Development Services",
-      description:
-        "Tailored CRM solutions to manage your customer relationships effectively.",
-      icon: "crm",
-    },
-    {
-      title: "API Development Services",
-      description:
-        "Robust API development for seamless system connectivity and data exchange.",
-      icon: "api",
-    },
-    {
-      title: "Web Application Development",
-      description:
-        "Custom web applications built with modern technologies and best practices.",
-      icon: "web",
-    },
-    {
-      title: "Mobile App Development",
-      description:
-        "Native and cross-platform mobile applications for iOS and Android.",
-      icon: "mobile",
-    },
-  ];
+const services = [
+  {
+    title: "Software Consulting Services",
+    description:
+      "Expert guidance on software strategy, architecture, and technology selection.",
+    icon: "consulting",
+  },
+  {
+    title: "Software Integration Services",
+    description:
+      "Seamless integration of different software systems and applications.",
+    icon: "integration",
+  },
+  {
+    title: "Custom CRM Development Services",
+    description:
+      "Tailored CRM solutions to manage your customer relationships effectively.",
+    icon: "crm",
+  },
+  {
+    title: "API Development Services",
+    description:
+      "Robust API development for seamless system connectivity and data exchange.",
+    icon: "api",
+  },
+  {
+    title: "Web Application Development",
+    description:
+      "Custom web applications built with modern technologies and best practices.",
+    icon: "web",
+  },
+  {
+    title: "Mobile App Development",
+    description:
+      "Native and cross-platform mobile applications for iOS and Android.",
+    icon: "mobile",
+  },
+];
 
+export default function CustomSoftwareDevelopment() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -135,7 +135,7 @@ export default function CustomSoftwareDevelopment() {
   );
 }
 
-export function Card({
+function Card({
   title,
   description,
   iconName,
