@@ -132,7 +132,7 @@ export default function TemporaryStaffing() {
           </p>
           <a
             href="/contact"
-            className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+            className="inline-block bg-gradient-to-br from-[#0A1B3D] via-[#30D5C8] to-[#1B3B7B] text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-colors"
           >
             Get Started Today
           </a>

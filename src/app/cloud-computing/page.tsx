@@ -1,58 +1,68 @@
-'use client'
+"use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { Heading } from '@/components/ui/heading';
+import Image from "next/image";
+import Link from "next/link";
+import { Heading } from "@/components/ui/heading";
 
 export default function CloudComputing() {
   const services = [
     {
-      title: 'Infrastructure-as-a-Service (IaaS)',
-      description: 'Scalable cloud infrastructure resources including virtual machines, storage, and networking.'
+      title: "Infrastructure-as-a-Service (IaaS)",
+      description:
+        "Scalable cloud infrastructure resources including virtual machines, storage, and networking.",
     },
     {
-      title: 'Platform-as-a-Service (PaaS)',
-      description: 'Complete development and deployment environment in the cloud.'
+      title: "Platform-as-a-Service (PaaS)",
+      description:
+        "Complete development and deployment environment in the cloud.",
     },
     {
-      title: 'Software-as-a-Service (SaaS)',
-      description: 'Cloud-based applications and software solutions delivered over the internet.'
+      title: "Software-as-a-Service (SaaS)",
+      description:
+        "Cloud-based applications and software solutions delivered over the internet.",
     },
     {
-      title: 'Cloud Migration Services',
-      description: 'Seamless transition of your applications and data to the cloud environment.'
+      title: "Cloud Migration Services",
+      description:
+        "Seamless transition of your applications and data to the cloud environment.",
     },
     {
-      title: 'Cloud Security Solutions',
-      description: 'Comprehensive security measures to protect your cloud infrastructure and data.'
+      title: "Cloud Security Solutions",
+      description:
+        "Comprehensive security measures to protect your cloud infrastructure and data.",
     },
     {
-      title: 'Cloud Optimization',
-      description: 'Performance optimization and cost management for your cloud resources.'
-    }
+      title: "Cloud Optimization",
+      description:
+        "Performance optimization and cost management for your cloud resources.",
+    },
   ];
 
   const cloudTypes = [
     {
-      icon: 'M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z',
-      title: 'Public Cloud',
-      description: 'Leverage shared cloud infrastructure for cost-effective and scalable solutions.'
+      icon: "M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z",
+      title: "Public Cloud",
+      description:
+        "Leverage shared cloud infrastructure for cost-effective and scalable solutions.",
     },
     {
-      icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
-      title: 'Private Cloud',
-      description: 'Dedicated cloud environment for enhanced security and control.'
+      icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+      title: "Private Cloud",
+      description:
+        "Dedicated cloud environment for enhanced security and control.",
     },
     {
-      icon: 'M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4',
-      title: 'Hybrid Cloud',
-      description: 'Best of both worlds with integrated public and private cloud solutions.'
+      icon: "M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4",
+      title: "Hybrid Cloud",
+      description:
+        "Best of both worlds with integrated public and private cloud solutions.",
     },
     {
-      icon: 'M13 10V3L4 14h7v7l9-11h-7z',
-      title: 'Multi-Cloud',
-      description: 'Utilize multiple cloud providers for optimal performance and redundancy.'
-    }
+      icon: "M13 10V3L4 14h7v7l9-11h-7z",
+      title: "Multi-Cloud",
+      description:
+        "Utilize multiple cloud providers for optimal performance and redundancy.",
+    },
   ];
 
   return (
@@ -70,18 +80,28 @@ export default function CloudComputing() {
                 Cloud Computing Services
               </Heading>
               <p className="text-lg text-gray-200 mb-8">
-                Transform your business with our comprehensive cloud computing solutions. 
-                We help organizations leverage the power of cloud technology for improved 
-                scalability, efficiency, and innovation.
+                Transform your business with our comprehensive cloud computing
+                solutions. We help organizations leverage the power of cloud
+                technology for improved scalability, efficiency, and innovation.
               </p>
               <div className="flex gap-4">
                 <Link
                   href="/contact-us"
-                  className="inline-flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-8 rounded-md transition-colors"
+                  className="bg-[#30D5C8] hover:bg-[#1B3B7B] text-[#0A1B3D] font-medium py-3 px-8 rounded-md transition-colors"
                 >
                   Get Started
-                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  <svg
+                    className="ml-2 w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
                   </svg>
                 </Link>
                 <Link
@@ -114,13 +134,14 @@ export default function CloudComputing() {
               Our Cloud Computing Services
             </h2>
             <p className="text-lg text-gray-600">
-              We provide comprehensive cloud solutions to help businesses modernize their 
-              infrastructure and achieve digital transformation goals.
+              We provide comprehensive cloud solutions to help businesses
+              modernize their infrastructure and achieve digital transformation
+              goals.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div 
+              <div
                 key={index}
                 className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
               >
@@ -142,9 +163,7 @@ export default function CloudComputing() {
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {service.title}
                 </h3>
-                <p className="text-gray-600">
-                  {service.description}
-                </p>
+                <p className="text-gray-600">{service.description}</p>
               </div>
             ))}
           </div>
@@ -164,7 +183,7 @@ export default function CloudComputing() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {cloudTypes.map((type, index) => (
-              <div 
+              <div
                 key={index}
                 className="bg-gray-50 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 border border-gray-100"
               >
@@ -183,7 +202,9 @@ export default function CloudComputing() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{type.title}</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  {type.title}
+                </h3>
                 <p className="text-gray-600">{type.description}</p>
               </div>
             ))}

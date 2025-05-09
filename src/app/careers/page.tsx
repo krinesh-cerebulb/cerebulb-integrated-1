@@ -52,12 +52,12 @@ export default function Careers() {
   return (
     <main className="bg-white min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#0A1B3D] to-[#19376D] text-white py-16 relative overflow-hidden">
+      <section className="bg-gradient-to-r from-[#0A1B3D] to-[#30D5C8] text-white py-16 relative overflow-hidden">
         <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-8">
           <div className="lg:w-1/2 mb-8 lg:mb-0">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Careers</h1>
             <p className="mb-6 text-lg">Find The Right Career You Deserve</p>
-            <a href="#benefits" className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold shadow transition-colors">View Benefits</a>
+            <a href="#benefits" className="bg-[#30D5C8] hover:bg-[#1B3B7B] text-[#0A1B3D] px-6 py-3 rounded-lg font-semibold shadow transition-colors">View Benefits</a>
           </div>
           <div className="lg:w-1/2 flex justify-center">
             <Image src="/images/18.png" alt="Careers" width={420} height={260} className="object-contain" />
@@ -101,7 +101,7 @@ export default function Careers() {
                   <span className="inline-flex items-center"><svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 12.414A8 8 0 1112.414 13.414l4.243 4.243z" /></svg>{job.location}</span>
                 </div>
               </div>
-              <a href={job.details} className="mt-4 inline-block bg-[#2563eb] hover:bg-blue-700 text-white px-5 py-2 rounded font-semibold transition-colors w-full text-center text-xs md:text-sm">More Details →</a>
+              <a href={job.details} className="mt-4 inline-block bg-gradient-to-br from-[#3ec9e1] via-[#f8fffe]  text-black px-5 py-2 rounded font-semibold transition-colors w-full text-center text-xs md:text-sm">More Details →</a>
             </div>
           ))}
         </div>

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Heading } from '@/components/ui/heading';
 import { Content } from '@/components/ui/content';
+import Section from '@/components/Section/section';
 
 const staffingServices = [
   {
@@ -25,6 +26,12 @@ const staffingServices = [
 ];
 
 export default function ITStaffing() {
+  const cards = staffingServices.map(service => ({
+    image: service.image,
+    title: service.name,
+    description: service.description
+  }));
+
   return (
     <main className="container mx-auto py-12 px-4">
       <div className="max-w-6xl mx-auto">
@@ -43,36 +50,11 @@ export default function ITStaffing() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {staffingServices.map((service) => (
-            <div 
-              key={service.slug}
-              className="group flex flex-col bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
-            >
-              <div className="bg-gray-50 p-6 flex items-center justify-center h-72">
-                <div className="relative w-full h-full">
-                  <Image
-                    src={service.image}
-                    alt={service.name}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-contain p-4 group-hover:scale-105 transition-transform"
-                    priority
-                  />
-                </div>
-              </div>
-              <div className="p-6">
-                <Link 
-                  href={`/it-staffing/${service.slug}`}
-                  className="block text-xl font-bold text-gray-800 hover:text-blue-600 transition-colors text-center mb-3"
-                >
-                  {service.name}
-                </Link>
-                <p className="text-gray-600 text-center">{service.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <Section
+          heading="Our Staffing Solutions"
+          subheading="Choose the right staffing solution for your business needs"
+          cards={cards}
+        />
       </div>
     </main>
   );

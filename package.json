@@ -14,6 +14,7 @@
     "@radix-ui/react-slot": "^1.1.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "framer-motion": "^12.9.4",
     "lucide-react": "^0.475.0",
     "next": "15.1.7",
     "react": "^19.0.0",
@@ -34,7 +35,7 @@
     "tailwindcss": "^4.0.0",
     "typescript": "^5"
   },
-  "company": "Humac Inc",
+  "company": "cerebulb",
   "sections": {
     "IT_Services": {
       "title": "IT Services",
@@ -158,9 +159,38 @@
       "headline": "Find The Right Career You Deserve",
       "cta": "View Benefits",
       "job_search": {
-        "filters": ["Job Type", "Job Location"],
-        "job_types": ["C2C", "Contract To Hire", "Full Time", "W2"],
-        "job_locations": ["AZ", "CA", "Columbus", "Columbus OH", "Dimondale", "Lansing", "MI", "Milpitas", "Milwaukee", "NEW JERSEY", "New Jersey (Hybrid)", "NJ", "NY", "NYC", "OH", "PHOENIX", "Portland Oregon", "Princeton", "TEXAS", "WI"]
+        "filters": [
+          "Job Type",
+          "Job Location"
+        ],
+        "job_types": [
+          "C2C",
+          "Contract To Hire",
+          "Full Time",
+          "W2"
+        ],
+        "job_locations": [
+          "AZ",
+          "CA",
+          "Columbus",
+          "Columbus OH",
+          "Dimondale",
+          "Lansing",
+          "MI",
+          "Milpitas",
+          "Milwaukee",
+          "NEW JERSEY",
+          "New Jersey (Hybrid)",
+          "NJ",
+          "NY",
+          "NYC",
+          "OH",
+          "PHOENIX",
+          "Portland Oregon",
+          "Princeton",
+          "TEXAS",
+          "WI"
+        ]
       },
       "featured_jobs": [
         "Senior Slack Infrastructure Engineer (W2, AZ PHOENIX)",
@@ -180,7 +210,7 @@
       "title": "Join Our Team",
       "description": "Join Our Team today and let us help you grow your career!",
       "company_overview": {
-        "founding": "Founded in 2006, Humac supplies a broad range of IT services including e-Business solutions, Enterprise Resource Planning (ERP) implementation and Post Implementation Support, Application development, Application Maintenance, Software customizations and Remote Database Administration services.",
+        "founding": "Founded in 2006, cerebulb supplies a broad range of IT services including e-Business solutions, Enterprise Resource Planning (ERP) implementation and Post Implementation Support, Application development, Application Maintenance, Software customizations and Remote Database Administration services.",
         "years": "18+ years of Excellence",
         "workforce": "51-200 employees",
         "headquarters": "Phoenix, AZ",
@@ -199,9 +229,9 @@
       "cta": "Apply Now"
     },
     "Additional_Sections": {
-      "About_Humac": {
-        "title": "About Humac",
-        "description": "Humac is an IT Software Services Company which provides high value information technology services and solutions to companies ranging in size from the Fortune 500 to small startups.",
+      "About_cerebulb": {
+        "title": "About cerebulb",
+        "description": "cerebulb is an IT Software Services Company which provides high value information technology services and solutions to companies ranging in size from the Fortune 500 to small startups.",
         "vision_values": "Great results come from great work. Quality search work demands research, planning, a process, judgment and finesse. Beginning with the gathering of detailed and accurate requirements, through the orchestration of the client's interview process, we pay attention to every detail. There are no shortcuts. Believe in your client. If we cannot be confident in a company's executive team, corporate culture, business model or future, we will not represent that company. Candidates entrust us with their careers. They deserve our sincere belief that any career moves we propose are sound and align with their stated priorities. When a company becomes our client, we immerse ourselves as its advocate. We become the client."
       },
       "Industries_Served": {
@@ -234,13 +264,18 @@
           "CVS Health"
         ],
         "testimonial": {
-          "quote": "Humac Inc has been our valued partner and consistently delivers with excellence.",
+          "quote": "cerebulb has been our valued partner and consistently delivers with excellence.",
           "author": "Jay Kode",
           "position": "VP-Operations"
         }
       },
       "Contact_Information": {
-        "quick_links": ["About Us", "IT Services", "Technologies", "Contact Us"],
+        "quick_links": [
+          "About Us",
+          "IT Services",
+          "Technologies",
+          "Contact Us"
+        ],
         "locations": {
           "USA": {
             "address": "2730 W Agua Fria Fwy, Suite #204, Phoenix, Arizona 85027",
@@ -251,7 +286,9 @@
             "phone": "+91 8977032116"
           }
         },
-        "social_media": ["LinkedIn"]
+        "social_media": [
+          "LinkedIn"
+        ]
       }
     }
   }

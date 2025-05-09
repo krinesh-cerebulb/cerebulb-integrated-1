@@ -169,7 +169,7 @@ export default function JoinOurTeam() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full py-3 bg-blue-600 text-white font-medium rounded transition-colors ${
+                    className={`w-full py-3 bg-gradient-to-br from-[#0A1B3D] via-[#f8fffe]  text-black font-medium rounded transition-colors ${
                       isSubmitting ? 'bg-blue-400 cursor-not-allowed' : 'hover:bg-blue-700'
                     }`}
                   >

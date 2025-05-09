@@ -10,27 +10,16 @@ const navConfig = [
     label: "About us",
   },
   {
-    href: "/it-services",
-    label: "IT Services",
-    dropdown: [
-      { href: "/custom-software-development", label: "Custom Software Development" },
-      { href: "/software-prototyping", label: "Software Prototyping" },
-      { href: "/devops-automation", label: "DevOps Automation" },
-      { href: "/mobile-app-development", label: "Mobile Application Development" },
-      { href: "/cloud-computing", label: "Cloud Computing" },
-      { href: "/quality-assurance", label: "Quality Assurance" },
-      { href: "/systems-integration", label: "Systems Integration" },
-      { href: "/web-application-development", label: "Web Application Development" }
-    ]
-  },
-  {
     href: "/it-staffing",
     label: "IT Staffing",
     dropdown: [
       { href: "/permanent-staffing", label: "Permanent staffing" },
       { href: "/temporary-staffing", label: "Temporary Staffing" },
-      { href: "/recruitment-process-outsourcing", label: "Recruitment Process Outsourcing (RPO)" }
-    ]
+      {
+        href: "/recruitment-process-outsourcing",
+        label: "Recruitment Process Outsourcing (RPO)",
+      },
+    ],
   },
   {
     href: "/technologies",
@@ -43,9 +32,12 @@ const navConfig = [
       { href: "/technologies/devops", label: "DevOps" },
       { href: "/technologies/cloud-technologies", label: "Cloud Technologies" },
       { href: "/technologies/project-management", label: "Project Management" },
-      { href: "/technologies/bigdata-technologies", label: "BigData Technologies" },
-      { href: "/technologies/machine-learning", label: "Machine Learning" }
-    ]
+      {
+        href: "/technologies/bigdata-technologies",
+        label: "BigData Technologies",
+      },
+      { href: "/technologies/machine-learning", label: "Machine Learning" },
+    ],
   },
   {
     href: "/careers",
@@ -61,8 +53,8 @@ const navConfig = [
     dropdown: [
       { href: "/benefits", label: "Benefits" },
       { href: "/blog", label: "Blog" },
-      { href: "/contact-us", label: "Contact Us" }
-    ]
+      { href: "/contact-us", label: "Contact Us" },
+    ],
   },
 ];
 
@@ -86,44 +78,49 @@ export function MainNav() {
       <nav className="flex items-center gap-4 text-sm xl:gap-6">
         {navConfig.map((item) => {
           const hasDropdown = item.dropdown && item.dropdown.length > 0;
-          
+
           return (
             <div key={item.label} className="relative group">
-              <div 
-                className="flex items-center cursor-pointer text-sm xl:text-base transition-colors hover:text-foreground/80 text-foreground/60"
-                onClick={() => hasDropdown && toggleDropdown(item.label)}
-              >
-                {hasDropdown ? (
-                  <div className="flex items-center">
-                    {item.label}
-                    <svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      width="16" 
-                      height="16" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      strokeWidth="2" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      className="ml-1 h-4 w-4"
-                    >
-                      <path d="m6 9 6 6 6-6"/>
-                    </svg>
-                  </div>
-                ) : (
-                  <Link href={item.href} className="hover:text-foreground/80">{item.label}</Link>
-                )}
-              </div>
-              
+              {hasDropdown ? (
+                <button
+                  type="button"
+                  className="flex items-center cursor-pointer text-sm xl:text-base font-medium underline underline-offset-4 text-black hover:text-black focus:text-black active:text-black transition-colors bg-transparent border-none p-0 m-0 focus:outline-none"
+                  onClick={() => toggleDropdown(item.label)}
+                  style={{ background: 'none' }}
+                >
+                  {item.label}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="ml-1 h-4 w-4"
+                  >
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </button>
+              ) : (
+                <Link
+                  href={item.href}
+                  className="text-sm xl:text-base font-medium underline underline-offset-4 text-black hover:text-black focus:text-black active:text-black transition-colors"
+                >
+                  {item.label}
+                </Link>
+              )}
+
               {hasDropdown && activeDropdown === item.label && (
-                <div className="absolute left-0 mt-2 w-64 rounded-md shadow-lg bg-white z-50">
+                <div className="absolute left-0 mt-2 w-64 rounded-md shadow-lg bg-surface z-50">
                   <div className="py-1" role="menu" aria-orientation="vertical">
                     {item.dropdown?.map((dropdownItem) => (
                       <Link
                         key={dropdownItem.href}
                         href={dropdownItem.href}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        className="block px-4 py-2 text-sm text-black hover:text-black focus:text-black active:text-black hover:bg-primary-container font-medium underline underline-offset-4"
                         onClick={closeDropdown}
                       >
                         {dropdownItem.label}

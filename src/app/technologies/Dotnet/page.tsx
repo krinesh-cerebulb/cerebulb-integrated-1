@@ -45,7 +45,7 @@ export default function DotNetDevelopment() {
       <section className="bg-[#0A1B3D] text-white py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-[#0A1B3D]">
           <div className="absolute inset-0 bg-[url('/images/pattern.png')] opacity-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0A1B3D] via-[#132B5C] to-[#1B3B7B] opacity-95"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0A1B3D] via-[#30D5C8] to-[#1B3B7B] opacity-95"></div>
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
@@ -60,7 +60,7 @@ export default function DotNetDevelopment() {
               </p>
               <a
                 href="/contact"
-                className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                className="inline-block bg-gradient-to-br from-[#0A1B3D] via-[#f8fffe]  text-black px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-colors"
               >
                 Enquire Now
               </a>
