@@ -9,7 +9,7 @@ interface SectionProps {
   children: React.ReactNode;
 }
 
-const Section: React.FC<SectionProps> = ({ heading, subheading, children }) => {
+const Section: React.FC<SectionProps> = ({ children }) => {
   return (
     <section className="py-16 bg-gray-50">
       <div className="max-w-6xl mx-auto text-center px-4">{children}</div>

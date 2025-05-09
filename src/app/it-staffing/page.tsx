@@ -1,36 +1,33 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { Heading } from '@/components/ui/heading';
-import { Content } from '@/components/ui/content';
-import Section from '@/components/Section/section';
+import { Content } from "@/components/ui/content";
+import { Heading } from "@/components/ui/heading";
 
-const staffingServices = [
-  {
-    name: 'Permanent Staffing',
-    slug: 'permanent-staffing',
-    description: 'Long-term staffing solutions with direct employment.',
-    image: '/images/staffing/permanent-staffing.webp'
-  },
-  {
-    name: 'Temporary Staffing',
-    slug: 'temporary-staffing',
-    description: 'Flexible staffing solutions for short-term needs.',
-    image: '/images/staffing/temporary-staffing.webp'
-  },
-  {
-    name: 'Recruitment Process Outsourcing (RPO)',
-    slug: 'recruitment-process-outsourcing',
-    description: 'End-to-end recruitment process management.',
-    image: '/images/staffing/rpo.webp'
-  }
-];
+// const staffingServices = [
+//   {
+//     name: "Permanent Staffing",
+//     slug: "permanent-staffing",
+//     description: "Long-term staffing solutions with direct employment.",
+//     image: "/images/staffing/permanent-staffing.webp",
+//   },
+//   {
+//     name: "Temporary Staffing",
+//     slug: "temporary-staffing",
+//     description: "Flexible staffing solutions for short-term needs.",
+//     image: "/images/staffing/temporary-staffing.webp",
+//   },
+//   {
+//     name: "Recruitment Process Outsourcing (RPO)",
+//     slug: "recruitment-process-outsourcing",
+//     description: "End-to-end recruitment process management.",
+//     image: "/images/staffing/rpo.webp",
+//   },
+// ];
 
 export default function ITStaffing() {
-  const cards = staffingServices.map(service => ({
-    image: service.image,
-    title: service.name,
-    description: service.description
-  }));
+  // const cards = staffingServices.map((service) => ({
+  //   image: service.image,
+  //   title: service.name,
+  //   description: service.description,
+  // }));
 
   return (
     <main className="container mx-auto py-12 px-4">
@@ -42,19 +39,21 @@ export default function ITStaffing() {
             </Heading>
             <Content className="prose max-w-none">
               <p className="text-lg text-gray-600">
-                We offer comprehensive IT staffing solutions to help you build high-performing teams.
-                Our services are designed to meet your specific needs, whether you&apos;re looking for permanent
-                employees, temporary staff, or complete recruitment process outsourcing.
+                We offer comprehensive IT staffing solutions to help you build
+                high-performing teams. Our services are designed to meet your
+                specific needs, whether you&apos;re looking for permanent
+                employees, temporary staff, or complete recruitment process
+                outsourcing.
               </p>
             </Content>
           </div>
         </div>
 
-        <Section
+        {/* <Section
           heading="Our Staffing Solutions"
           subheading="Choose the right staffing solution for your business needs"
           cards={cards}
-        />
+        /> */}
       </div>
     </main>
   );

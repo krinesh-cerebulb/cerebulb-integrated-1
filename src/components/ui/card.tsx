@@ -1,8 +1,8 @@
-import { cn } from "@/lib/utils"
-import { HTMLAttributes } from "react"
+import { cn } from "@/lib/utils";
+import { HTMLAttributes } from "react";
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export function Card({ className, children, ...props }: CardProps) {
@@ -12,8 +12,9 @@ export function Card({ className, children, ...props }: CardProps) {
         "rounded-lg border bg-card text-card-foreground shadow-sm",
         className
       )}
+      {...props}
     >
       {children}
     </div>
-  )
+  );
 }

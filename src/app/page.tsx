@@ -1,10 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-import { useState, useEffect, ChangeEvent } from "react";
-import { motion } from "framer-motion";
-import ServiceImage from "@/components/ServiceImage";
 import HeroImage from "@/components/HeroImage";
 import Section, {
   SectionHeader,
@@ -12,6 +7,10 @@ import Section, {
   SectionSubheading,
 } from "@/components/Section/section";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { ChangeEvent, useEffect, useState } from "react";
 
 // Type definitions
 interface BaseService {
@@ -21,9 +20,9 @@ interface BaseService {
   children?: React.ReactNode;
 }
 
-interface CloudService extends BaseService {}
+// interface CloudService extends BaseService {}
 
-interface MobileAppService extends BaseService {}
+type MobileAppService = BaseService;
 
 interface StaffingService extends BaseService {
   image: string;
@@ -46,25 +45,25 @@ interface Job {
 }
 
 // Cloud Computing Services data
-const cloudServices: CloudService[] = [
-  {
-    id: 1,
-    title: "Infrastructure-as-a-Service (IaaS)",
-    description:
-      "Scalable cloud infrastructure services for your business needs.",
-  },
-  {
-    id: 2,
-    title: "Platform-as-a-Service (PaaS)",
-    description:
-      "Complete development and deployment environment in the cloud.",
-  },
-  {
-    id: 3,
-    title: "Software-as-a-Service (SaaS)",
-    description: "Cloud-based software solutions delivered on demand.",
-  },
-];
+// const cloudServices: CloudService[] = [
+//   {
+//     id: 1,
+//     title: "Infrastructure-as-a-Service (IaaS)",
+//     description:
+//       "Scalable cloud infrastructure services for your business needs.",
+//   },
+//   {
+//     id: 2,
+//     title: "Platform-as-a-Service (PaaS)",
+//     description:
+//       "Complete development and deployment environment in the cloud.",
+//   },
+//   {
+//     id: 3,
+//     title: "Software-as-a-Service (SaaS)",
+//     description: "Cloud-based software solutions delivered on demand.",
+//   },
+// ];
 
 // Mobile App Development Services data
 const mobileAppServices: MobileAppService[] = [
@@ -234,7 +233,7 @@ export default function Home() {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [slides.length]);
+  }, [slides]);
 
   useEffect(() => {
     // Filter jobs based on search term, job type, and location
@@ -396,9 +395,7 @@ export default function Home() {
                   </div>
                 </div>
                 <Button asChild>
-                  <Link href={`/jobs/${job.slug}`}>
-                    More Details →
-                  </Link>
+                  <Link href={`/jobs/${job.slug}`}>More Details →</Link>
                 </Button>
               </div>
             ))}
@@ -407,9 +404,7 @@ export default function Home() {
           {/* Load More Button */}
           {displayedJobs.length < jobListings.length && (
             <div className="mt-8 text-center">
-              <Button onClick={loadMoreJobs}>
-                Load More Jobs
-              </Button>
+              <Button onClick={loadMoreJobs}>Load More Jobs</Button>
             </div>
           )}
 
@@ -431,9 +426,7 @@ export default function Home() {
                 With lots of unique blocks, you can easily build pages them
                 without build your next landing page so quickly with us.
               </p>
-              <Button>
-                Enquire Now
-              </Button>
+              <Button>Enquire Now</Button>
             </div>
             <div className="md:w-1/2">
               <Image
@@ -478,26 +471,39 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="bg-white/80 rounded-2xl p-8 shadow-blue-100 border border-blue-100"
               >
-                <h2 className="text-4xl font-extrabold mb-6 text-blue-500 drop-shadow-sm">About Cloud Computing</h2>
+                <h2 className="text-4xl font-extrabold mb-6 text-blue-500 drop-shadow-sm">
+                  About Cloud Computing
+                </h2>
                 <p className="text-lg text-gray-700 mb-4">
-                  Choosing a cloud type or service is an important decision. Cloud services are provided over the Internet by third-party providers. The three main types are:
+                  Choosing a cloud type or service is an important decision.
+                  Cloud services are provided over the Internet by third-party
+                  providers. The three main types are:
                 </p>
                 <ul className="text-lg text-gray-700 mb-4 list-disc list-inside space-y-2">
                   <li>
-                    <span className="font-semibold text-blue-500">IaaS (Infrastructure as a Service):</span>
+                    <span className="font-semibold text-blue-500">
+                      IaaS (Infrastructure as a Service):
+                    </span>
                     &nbsp;Offers virtual servers and storage (e.g., AWS, Azure).
                   </li>
                   <li>
-                    <span className="font-semibold text-blue-500">PaaS (Platform as a Service):</span>
-                    &nbsp;Provides tools for app development (e.g., Heroku, Google App Engine).
+                    <span className="font-semibold text-blue-500">
+                      PaaS (Platform as a Service):
+                    </span>
+                    &nbsp;Provides tools for app development (e.g., Heroku,
+                    Google App Engine).
                   </li>
                   <li>
-                    <span className="font-semibold text-blue-500">SaaS (Software as a Service):</span>
-                    &nbsp;Delivers software via the web (e.g., Microsoft 365, Google Workspace).
+                    <span className="font-semibold text-blue-500">
+                      SaaS (Software as a Service):
+                    </span>
+                    &nbsp;Delivers software via the web (e.g., Microsoft 365,
+                    Google Workspace).
                   </li>
                 </ul>
                 <p className="text-lg text-gray-700 mb-8">
-                  Each type offers different levels of control and convenience.                </p>
+                  Each type offers different levels of control and convenience.{" "}
+                </p>
               </motion.div>
             </div>
           </div>

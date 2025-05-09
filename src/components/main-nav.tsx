@@ -1,6 +1,5 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -86,7 +85,7 @@ export function MainNav() {
                   type="button"
                   className="flex items-center cursor-pointer text-sm xl:text-base font-medium underline underline-offset-4 text-black hover:text-black focus:text-black active:text-black transition-colors bg-transparent border-none p-0 m-0 focus:outline-none"
                   onClick={() => toggleDropdown(item.label)}
-                  style={{ background: 'none' }}
+                  style={{ background: "none" }}
                 >
                   {item.label}
                   <svg
